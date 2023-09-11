@@ -45,12 +45,12 @@ node() {
                         bower cache clean
                         bower install --force
                         cd ..
-                        #gulp build
+                        gulp build
                         gulp packageCorePlugins
                         npm run collection-plugins
                         npm run build
                         npm run test
-                        #cp collection-editor.zip collection-editor.zip:${artifact_version}
+                        cp collection-editor.zip collection-editor.zip:${artifact_version}
                     """
                 }
                 stage('ArchiveArtifacts') {
