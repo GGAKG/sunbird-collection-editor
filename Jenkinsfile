@@ -39,6 +39,7 @@ node() {
                         export build_number=${commit_hash}
                         rm -rf collection-editor
                         node -v
+                        npm install -g npm@4
                         npm -v                        
                         npm install
                         cd app
