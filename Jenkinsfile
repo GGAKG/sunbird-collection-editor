@@ -33,29 +33,29 @@ node() {
                 }
                 echo "artifact_version: " + artifact_version
 
-                stage('Build') {
-                    sh """
-                        export version_number=${branch_name}
-                        export build_number=${commit_hash}
-                        ls
-                        rm -rf collection-editor
-                        ls
-                        node -v
-                        npm -v                        
-                        yarn install
-                        cd app
-                        ls
-                        bower cache clean
-                        bower install --force
-                        cd ..
-                        #gulp build
-                        #gulp packageCorePlugins
-                        npm run collection-plugins
-                        npm run build
-                        npm run test
-                        #cp collection-editor.zip collection-editor.zip:${artifact_version}
-                    """
-                }
+                // stage('Build') {
+                //     sh """
+                //         export version_number=${branch_name}
+                //         export build_number=${commit_hash}
+                //         ls
+                //         rm -rf collection-editor
+                //         ls
+                //         node -v
+                //         npm -v                        
+                //         yarn install
+                //         cd app
+                //         ls
+                //         bower cache clean
+                //         bower install --force
+                //         cd ..
+                //         #gulp build
+                //         #gulp packageCorePlugins
+                //         npm run collection-plugins
+                //         npm run build
+                //         npm run test
+                //         #cp collection-editor.zip collection-editor.zip:${artifact_version}
+                //     """
+                // }
                 stage('ArchiveArtifacts') {
                     sh """
                         mkdir collection-editor-artifacts
