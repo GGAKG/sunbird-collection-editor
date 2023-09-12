@@ -58,6 +58,7 @@ node() {
                 // }
                 stage('ArchiveArtifacts') {
                     sh """
+                        cp /home/beehyv/Desktop/collection-editor.zip /var/lib/jenkins/workspace/Build/Plugins/CollectionEditor/collection-editor.zip
                         mkdir collection-editor-artifacts
                         cp collection-editor.zip collection-editor-artifacts
                         zip -j  collection-editor-artifacts.zip:${artifact_version}  collection-editor-artifacts/*                      
