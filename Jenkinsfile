@@ -58,6 +58,7 @@ node() {
                 // }
                 stage('ArchiveArtifacts') {
                     sh """
+                        export artifact_version="release-3.6.0_RC1"
                         mkdir collection-editor-artifacts
                         cp collection-editor.zip collection-editor-artifacts
                         zip -j  collection-editor-artifacts.zip:${artifact_version}  collection-editor-artifacts/*                      
