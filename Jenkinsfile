@@ -37,11 +37,14 @@ node() {
                     sh """
                         export version_number=${branch_name}
                         export build_number=${commit_hash}
+                        ls
                         rm -rf collection-editor
+                        ls
                         node -v
                         npm -v                        
                         yarn install
                         cd app
+                        ls
                         bower cache clean
                         bower install --force
                         cd ..
